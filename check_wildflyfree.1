@@ -1,0 +1,54 @@
+.Dd $Mdocdate$
+.Dt check_wildflyfree 1
+.Os
+.Sh NAME
+.Nm check_wildflyfree
+.Nd check wildfly heap memory usage
+.Sh SYNOPSIS
+.Nm
+.Op Fl u Ar username
+.Op Fl p Ar password
+.Op Fl h Ar host
+.Op Fl w Ar percentage
+.Op Fl c Ar percentage
+.Sh DESCRIPTION
+.Nm
+is a plugin for Nagios/Icinga systems which checks the current heap memory
+usage of a Wildfly server and calculates the percentage of heap free.
+.Pp
+The options are:
+.Bl -tag -width Ds
+.It Fl u Ar username
+authenticate as
+.Ar username .
+The default is wildfly.
+.It Fl p Ar password
+authenticate with
+.Ar password .
+The default is wildfly.
+.It Fl h Ar host
+check heap memory usage at
+.Ar host .
+The default is localhost.
+.It Fl w Ar percentage
+exit with warning when
+.Ar percentage
+amount of memory is used.
+The default is 50.
+.It Fl c Ar percentage
+exit with critical when
+.Ar percentage
+amount of memory is used.
+The default is 75.
+.El
+.Sh EXIT STATUS
+check_wildflyfree exits with status 0 if the memory usage is below the
+warning threshold.
+Otherwise it exits with 1 or 2 if the memory usage is above warning or
+critical respectively.
+On any other error it should exit with status 3 (UNKNOWN).
+.Sh SOURCE
+https://git.sr.ht/~otl/wildfly
+.Sh SEE ALSO
+The example icinga2 configuration file icinga2.conf in the source
+distribution.
