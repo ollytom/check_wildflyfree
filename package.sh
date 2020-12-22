@@ -15,4 +15,4 @@ cp README.md /tmp/check_wildflyfree
 cp icinga2.conf /tmp/check_wildflyfree
 cp LICENSE /tmp/check_wildflyfree
 
-(cd /tmp && tar cv check_wildflyfree | gzip -c > check_wildflyfree-$tag-${GOOS}_${GOARCH}.tar.gz)
+(cd /tmp && tar cv check_wildflyfree | gzip -c > check_wildflyfree-$version-${GOOS}_${GOARCH}.tar.gz)
