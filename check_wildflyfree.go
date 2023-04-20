@@ -2,10 +2,8 @@ package main
 
 import (
 	"flag"
-	"os"
 	"fmt"
-
-	"git.sr.ht/~otl/wildfly"
+	"os"
 )
 
 func main() {
@@ -16,7 +14,7 @@ func main() {
 	critical := flag.Int("c", 75, "critical")
 	flag.Parse()
 
-	client := wildfly.NewClient(*host, *username, *password)
+	client := NewClient(*host, *username, *password)
 	mem, err := client.StatMemory()
 	if err != nil {
 		fmt.Println("fetch memory usage: ", err)

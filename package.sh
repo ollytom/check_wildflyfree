@@ -6,7 +6,7 @@ GOOS=linux
 GOARCH=amd64
 version=`git tag |tail -1`
 
-go build 
+go build -o check_wildflyfree
 
 mkdir -p /tmp/check_wildflyfree
 cp check_wildflyfree /tmp/check_wildflyfree
